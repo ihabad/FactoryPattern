@@ -8,23 +8,20 @@ namespace factory_pattern
     {
         public static IVehicle GetVehicle(int WindowsCount)
         {
-            switch(WindowsCount)
+            if (WindowsCount == 8)
             {
-                case 6:
-                    return new Car();
-
-                case 7:
-                    return new BigRig();
-
-               default:
-                    return new Motorcycle();
-
+                return new Car();
+            }
+            else if (WindowsCount == 6)
+            {
+                return new BigRig();
+            }
+            else
+            {
+                return new Motorcycle();
             }
 
-            
 
         }
-
-	    
     }
 }
